@@ -4,8 +4,8 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         int count = Integer.parseInt(br.readLine());
         int[] nums = new int[count];
 
@@ -16,8 +16,8 @@ public class Main {
 
         Arrays.sort(nums);
         for (int num : nums){
-            bw.write(num+"\n");
+            sb.append(num).append("\n");
         }
-        bw.close();
+        System.out.println(sb);
     }
 }
