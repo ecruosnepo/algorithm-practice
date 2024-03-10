@@ -9,13 +9,20 @@ public class Main {
         char[] input = br.readLine().toLowerCase().toCharArray();
 
         final int r = 31;
+        final int M = 1234567891;
         final int charToNum = 96;
-        int result = 0;
+        long sum = 0;
+        long pow = 1;
+        long result = 0;
 
         for (int i = 0; i < input.length; i++) {
-            result += ((input[i]-charToNum) * (int)Math.pow(r,i));
+            sum += ((input[i]-charToNum) * pow) % M;
+            pow = (pow * r) % M;
         }
+        
+        result = sum % M; 
 
         System.out.println(result);
+
     }
 }
